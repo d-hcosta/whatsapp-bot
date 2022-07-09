@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "json-server ./server/db.json --port 3200",
+    "server:w": "json-server --watch ./server/db.json --port 3200",
     "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "@open-wa/wa-automate": "^4.42.4",
     "@open-wa/wa-decrypt": "^4.4.0",

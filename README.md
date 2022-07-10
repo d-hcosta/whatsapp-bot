@@ -1,3 +1,5 @@
+## O projeto está sendo refatorado em TypeScript.
+
 ## Instalação
 
 Em breve..

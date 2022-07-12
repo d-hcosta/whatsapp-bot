@@ -2,6 +2,10 @@
 
 Em breve..
 
+## To-dos
+- [ ] Refatorar o projeto em TypeScript.
+- [ ] Incrementar módulos para grupos/ outros.
+
 ## Créditos
 
 Esse projeto foi baseado nos quatro repósitorios abaixo, deixo meus agradecimentos!

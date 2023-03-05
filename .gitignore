@@ -1,14 +1,7 @@
-# Node
 node_modules
 
-# Open-WA
+# managed by open-wa
 **.data.json
 **.node-persist**
-
-# Env
-**.env**
-
-# Managed
 **_IGNORE_**
-
-server/db.json
+# end managed by open-wa

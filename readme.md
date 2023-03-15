@@ -26,7 +26,7 @@ BASE_URL_=http://localhost:3200
 ```
 
 - **MAINTENANCE_MODE:** Indicates if the bot is under maintenance, if true, it will respond with its current status and will not perform any function.
-- **BASE_URL_:** If not entered, it will be by default: `http://localhost:3004`
+- **BASE_URL:** If not entered, it will be by default: `http://localhost:3004`
 
 ## Server
 
@@ -35,7 +35,7 @@ BASE_URL_=http://localhost:3200
 We need a file to store all the information:
 
 ```bash
-mkdir -p src/Server && touch ~/src/Server/db.json
+touch ~/src/Server/db.json
 ```
 
 Now open this file in your text editor and paste the object below:

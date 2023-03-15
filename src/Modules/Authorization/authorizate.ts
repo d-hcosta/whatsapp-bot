@@ -11,41 +11,39 @@ export async function Authorize(client: Client, message: Message) {
 
   const groupId = chat.groupMetadata.id;
   const groupAdmins = await client.getGroupAdmins(groupId);
-  const isGroupAdmin = groupAdmins.includes(sender.id);
+  const isGroupAdmins = groupAdmins.includes(sender.id);
 
-  if (!isGroupAdmin) {
+  if (!isGroupAdmins) {
     return client.reply(from, MODULES_MESSAGES.ERROR_ONLY_ADMIN, id);
   }
 
-  const authorizationStatus = await CheckAuthorization(chat.id);
+  const _checkAuthorization = await CheckAuthorization(chat.id);
 
-  if (authorizationStatus.status) {
-    const authorization = authorizationStatus.authorization;
+  if (_checkAuthorization.status) {
+    const authorization = _checkAuthorization.authorization;
 
     if (authorization !== true) {
-      const updateAuthorization = await UpdateAuthorization(true, chat.id);
+      const _alterAuthorization = await UpdateAuthorization(true, chat.id);
 
-      if (updateAuthorization) {
+      if (_alterAuthorization) {
         await client.sendText(from, MODULES_MESSAGES.SUCCESS_AUTHORIZATION);
       } else {
         await client.sendText(from, MODULES_MESSAGES.ERROR_AUTHORIZATION);
       }
     } else {
-      await client.sendText(from, MODULES_MESSAGES.ERROR_ALREADY_AUTHORIZED);
+      await client.sendText(from, MODULES_MESSAGES.SUCCESS_AUTHORIZATION);
     }
   } else {
-    if (authorizationStatus.error === 404) {
-      const createAuthorization = await CreateAuthorization(true, chat.id);
+    if (!_checkAuthorization.status && _checkAuthorization.error === 404) {
+      const _createAuthorization = await CreateAuthorization(true, chat.id);
 
-      if (createAuthorization.status) {
+      if (_createAuthorization.status) {
         await client.sendText(from, MODULES_MESSAGES.SUCCESS_AUTHORIZATION);
       } else {
-        const errorMessage = `${MODULES_MESSAGES.SUCCESS_AUTHORIZATION}\n${createAuthorization.error}`;
-        await client.sendText(from, errorMessage);
+        await client.sendText(from, `${MODULES_MESSAGES.ERROR_AUTHORIZATION}`);
       }
     } else {
-      const errorMessage = `${MODULES_MESSAGES.SUCCESS_AUTHORIZATION}\n${authorizationStatus.error}`;
-      await client.sendText(from, errorMessage);
+      await client.sendText(from, `${MODULES_MESSAGES.ERROR_AUTHORIZATION}`);
     }
   }
 }

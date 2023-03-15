@@ -10,7 +10,7 @@ export const SILENCED_USERS = [""];
 export const SYSTEM_MESSAGES = {
   BANNED_USER: () => `*_You're banned._*`,
   MAITENANCE_MODE: () => `*_I'm in maitenance mode, try again later._*`,
-  NOT_AUTHORIZED: () => `*I doesn't have authorization. /authorize*`,
+  NOT_AUTHORIZED: () => `*I doesn't have authorization. !authorize*`,
 };
 
 export const MODULES_MESSAGES = {

@@ -8,7 +8,9 @@
   "scripts": {
     "build": "rimraf ./build && tsc",
     "start": "nodemon",
-    "start:prod": "npm run build && node build/app.ts"
+    "start:prod": "npm run build && node build/app.ts",
+    "server": "json-server ./src/Server/db.json --port 3200",
+    "server:w": "json-server --watch ./src/Server/db.json --port 3200"
   },
   "devDependencies": {
     "@types/node": "^18.14.6",

@@ -48,10 +48,15 @@ Now open this file in your text editor and paste the object below:
 
 ### Development environment
 
-If you don't have [json-server](https://yarnpkg.com/package/json-server) globally, install it.
+Use [json-server](https://yarnpkg.com/package/json-server) to create a fake Rest-Api, where we will save our database.
+To start it, enter the Server folder and issue the following commands:
 
 ```
-yarn global add json-server
+cd src/Server
+```
+
+```
+yarn install
 ```
 
 If you are in the development environment, just run `yarn server` or `yarn server:w`, if you want in watch mode.

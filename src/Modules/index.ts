@@ -1,6 +1,5 @@
 export * from "./Sticker";
 export * from "./WarnAll";
-export * from "./Leave";
 export * from "./Menu";
 export * from "./MyNumber";
 export * from "./Readme";

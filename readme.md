@@ -48,8 +48,7 @@ Now open this file in your text editor and paste the object below:
 
 ### Development environment
 
-Use [json-server](https://yarnpkg.com/package/json-server) to create a fake Rest-Api, where we will save our database.
-To start it, enter the Server folder and issue the following commands:
+We are using the package [json-server](https://yarnpkg.com/package/json-server) to create a fake RestApi, where we will save our database. To start it, enter the Server folder and issue the following commands:
 
 ```
 cd src/Server

@@ -46,15 +46,26 @@ export async function UpdateAuthorization(value: boolean, id: string): Promise<b
     });
 }
 
-export async function CreateAuthorization(value: boolean, id: string): Promise<{ status: boolean; error: number }> {
+export async function CreateAuthorization(
+  value: boolean,
+  id: string
+): Promise<{
+  status: boolean;
+  error: number;
+}> {
   return axios
-    .post(`${BASE_URL}/authorizations`, { id: id, authorization: value })
-    .then(() => {
-      return { status: true, error: 0 };
+    .post(`${BASE_URL}/authorizations`, {
+      id: id,
+      authorization: value,
+    })
+    .then((res) => {
+      return {
+        status: true,
+        error: 0,
+      };
     })
     .catch((err) => {
       console.log(`error: ${err}`);
-
       return {
         status: false,
         error: err?.response?.status,

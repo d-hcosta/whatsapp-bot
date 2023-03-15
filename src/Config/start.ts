@@ -1,6 +1,6 @@
 import { Client, Message } from "@open-wa/wa-automate";
 import { Authorization, Commands } from "../Service";
-import { USER_RETURN_MESSAGES } from "../Constants";
+import { SYSTEM_MESSAGES } from "../Constants";
 
 export async function startConfiguration(client: Client, message: Message) {
   const { id, caption, body, isGroupMsg, chat, from } = message;
@@ -23,7 +23,7 @@ export async function startConfiguration(client: Client, message: Message) {
   if (isGroupMsg && !(await Authorization(chat.id))) {
     if (command !== "!authorize" && command !== ".authorize") {
       console.log("\x1b[1;31mNOT AUTHORIZED! IGNORING\x1b[0m");
-      return client.reply(from, USER_RETURN_MESSAGES.imNotAuthorized(), id);
+      return client.reply(from, SYSTEM_MESSAGES.NOT_AUTHORIZED(), id);
     }
   }
 

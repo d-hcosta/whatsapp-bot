@@ -50,7 +50,7 @@ Now open this file in your text editor and paste the object below:
 
 If you don't have [json-server](https://yarnpkg.com/package/json-server) globally, install it.
 
-```bash
+```
 yarn global add json-server
 ```
 
@@ -60,7 +60,7 @@ That way, if you want to change the port, you'll find it in the `package.json` f
 
 ## Execution
 
-```bash
+```
 yarn start
 ```
 

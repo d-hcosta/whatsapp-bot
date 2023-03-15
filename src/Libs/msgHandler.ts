@@ -1,5 +1,5 @@
 import { Client, Message } from "@open-wa/wa-automate";
-import { BANNED_USERS, SILENCED_USERS, USER_RETURN_MESSAGES } from "../Constants";
+import { BANNED_USERS, SILENCED_USERS, SYSTEM_MESSAGES } from "../Constants";
 import { startConfiguration } from "../Config/start";
 
 const isMaintenanceMode = process.env.MAINTENANCE_MODE === "true";
@@ -31,13 +31,13 @@ export async function msgHandler(client: Client, message: Message) {
 
     if (isCommand && BANNED_USERS.includes(chat.id)) {
       console.log("\x1b[1;31mBANNED USER! IGNORING\x1b[0m");
-      await client.sendText(from, USER_RETURN_MESSAGES.youAreBanned());
+      await client.sendText(from, SYSTEM_MESSAGES.BANNED_USER());
       return;
     }
 
     if (isCommand && isMaintenanceMode) {
       console.log("\x1b[1;31mMAINTENANCE_MODE ON! IGNORING\x1b[0m");
-      return client.sendText(from, USER_RETURN_MESSAGES.imInMaintenance());
+      return client.sendText(from, SYSTEM_MESSAGES.MAITENANCE_MODE());
     }
 
     startConfiguration(client, message);

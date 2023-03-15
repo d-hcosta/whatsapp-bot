@@ -35,7 +35,7 @@ BASE_URL_=http://localhost:3200
 We need a file to store all the information:
 
 ```bash
-bash mkdir -p src/Server && touch ~/src/Server/db.json
+mkdir -p src/Server && touch ~/src/Server/db.json
 ```
 
 Now open this file in your text editor and paste the object below:

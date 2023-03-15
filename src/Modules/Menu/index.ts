@@ -26,7 +26,7 @@ export async function Menu(client: Client, message: Message) {
       break;
     case "groups":
     case "group":
-      help = `*=== Commands for groups ===*\n→ !warnAll\n→ !ban @username.\n→ !authorize (allow the bot to work)\n→ !revoke (forbid the bot to work) \n\n${showAll}`;
+      help = `*=== Commands for groups ===*\n→ !warnAll\n→ !ban @username.\n→ !authorize (allow the bot to work)\n→ !revoke (forbid the bot to work)\n→ !readme\n\n${showAll}`;
       break;
     default:
       help = defaultHelp;

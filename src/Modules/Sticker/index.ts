@@ -1,7 +1,7 @@
 import { Client, Message } from "@open-wa/wa-automate";
 import { decryptMedia } from "@open-wa/wa-decrypt";
 
-import { USER_RETURN_MESSAGES } from "../../Constants";
+import { MODULES_MESSAGES } from "../../Constants";
 
 export async function Sticker(client: Client, message: Message) {
   const { id, from, isMedia, mimetype, type, quotedMsg } = message;
@@ -55,6 +55,6 @@ export async function Sticker(client: Client, message: Message) {
       dataConfig
     );
   } else {
-    client.reply(from, USER_RETURN_MESSAGES.stickerErrorType, id);
+    client.reply(from, MODULES_MESSAGES.ERROR_STICKER_TYPE, id);
   }
 }

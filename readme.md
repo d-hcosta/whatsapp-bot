@@ -58,9 +58,7 @@ cd src/Server
 yarn install
 ```
 
-If you are in the development environment, just run `yarn server` or `yarn server:w`, if you want in watch mode.
-
-That way, if you want to change the port, you'll find it in the `package.json` file under `scripts`, search for `server` and `server:w` and change the port that is after the `--port` flag.
+If you are in the development environment, just run `yarn start`.
 
 ## Execution
 

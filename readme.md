@@ -1,7 +1,10 @@
+<h1 align="center">DEPRECATED</h1>
+
 <p align="center">
   <img alt="Versão" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
   <img alt="node-version" src="https://img.shields.io/node/v/@open-wa/wa-automate"/>
   <img alt="made-with-node" src="https://img.shields.io/badge/Made%20with-node-1f425f.svg"/>
+  <img alt="made-with-node" src="https://img.shields.io/maintenance/no/2023.svg"/>
 </p>
 
 ## Installation
